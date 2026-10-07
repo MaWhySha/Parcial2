@@ -1,0 +1,192 @@
+:root {
+    --asfalto: #2b2f33;
+    --linea-vial: #f2c230;
+    --moto: #1a9e8f;
+    --auto: #2f5fd0;
+    --papel: #f7f7f4;
+    --texto: #22262a;
+    --error: #c0392b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--papel);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+/* Encabezado con la "línea de carretera" como elemento característico */
+.encabezado {
+    background: var(--asfalto);
+    color: #fff;
+    padding: 2rem 1.25rem 2.25rem;
+    text-align: center;
+    border-bottom: 6px dashed var(--linea-vial);
+}
+
+.encabezado h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 0.02em;
+}
+
+.encabezado p {
+    margin: 0.4rem 0 0;
+    opacity: 0.85;
+}
+
+.contenedor {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+}
+
+h2 {
+    font-size: 1.15rem;
+    margin: 1.5rem 0 0.75rem;
+}
+
+/* Opciones de servicio: cada una con su color */
+.opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.opcion {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid #d5d7d9;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.opcion input {
+    margin: 0 0 0.5rem;
+    accent-color: currentColor;
+}
+
+.opcion-nombre {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.opcion-detalle {
+    font-size: 0.85rem;
+    color: #5c6166;
+}
+
+.opcion-moto {
+    color: var(--moto);
+}
+
+.opcion-auto {
+    color: var(--auto);
+}
+
+.opcion-moto:has(input:checked) {
+    border-color: var(--moto);
+    background: #e8f6f4;
+}
+
+.opcion-auto:has(input:checked) {
+    border-color: var(--auto);
+    background: #eaf0fb;
+}
+
+.etiqueta {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #d5d7d9;
+    border-radius: 8px;
+}
+
+button {
+    width: 100%;
+    margin-top: 0.9rem;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--asfalto);
+    background: var(--linea-vial);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+input:focus-visible,
+button:focus-visible,
+.opcion:has(input:focus-visible) {
+    outline: 3px solid var(--asfalto);
+    outline-offset: 2px;
+}
+
+/* Resultado estilo taxímetro */
+.resultado {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+    background: var(--asfalto);
+    color: #fff;
+    border-left: 8px solid var(--linea-vial);
+}
+
+.resultado.moto {
+    border-left-color: var(--moto);
+}
+
+.resultado.auto {
+    border-left-color: var(--auto);
+}
+
+.resultado .monto {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--linea-vial);
+    margin: 0.25rem 0;
+}
+
+.resultado p {
+    margin: 0.2rem 0;
+}
+
+.error {
+    color: var(--error);
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.oculto {
+    display: none;
+}
+
+.pie {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b7075;
+    padding: 1rem;
+}
+
+@media (max-width: 420px) {
+    .opciones {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RutaYa · Estimador de viajes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="encabezado">
+        <h1>RutaYa</h1>
+        <p>Calcula cuánto costaría tu viaje antes de pedirlo.</p>
+    </header>
+
+    <main class="contenedor">
+        <section aria-labelledby="titulo-servicio">
+            <h2 id="titulo-servicio">1. Elige el servicio</h2>
+
+            <div class="opciones">
+                <label class="opcion opcion-moto">
+                    <input type="radio" name="servicio" value="moto" checked>
+                    <span class="opcion-nombre">Motocicleta</span>
+                    <span class="opcion-detalle">Base $1.00 + $0.35 por km</span>
+                </label>
+
+                <label class="opcion opcion-auto">
+                    <input type="radio" name="servicio" value="auto">
+                    <span class="opcion-nombre">Automóvil</span>
+                    <span class="opcion-detalle">Base $2.00 + $0.60 por km</span>
+                </label>
+            </div>
+        </section>
+
+        <section aria-labelledby="titulo-distancia">
+            <h2 id="titulo-distancia">2. Ingresa la distancia</h2>
+            <label for="distancia" class="etiqueta">Distancia del viaje (km)</label>
+            <input type="number" id="distancia" min="0.1" step="0.1" placeholder="Ej: 7.5">
+            <button type="button" id="btn-calcular">Calcular estimación</button>
+        </section>
+
+        <section aria-live="polite">
+            <div id="resultado" class="resultado oculto"></div>
+            <p id="error" class="error oculto"></p>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Prototipo de la evaluación práctica de POO · Escenario C</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
